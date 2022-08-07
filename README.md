@@ -1,31 +1,46 @@
 # ДЗ: Модуль 1. Основи Node.js
 
-### Команда:
+### Отримуємо і виводимо весь список контактів у вигляді таблиці (console.table)
+Команда:
 ```
 node index.js --action="list"
 ```
-### Результак виконання:
+Результат виконання:
 
 ![result1](https://raw.githubusercontent.com/mrkuzyk/goit-node-hw-01/main/img/result1.png) 
 ___
 
-### Команда:
+### Отримуємо контакт по id:
+Команда:
 ```
 node index.js --action="get" --id=Xjw8I
 ```
-### Результак виконання:
+Результат виконання:
 
 ![result1](https://raw.githubusercontent.com/mrkuzyk/goit-node-hw-01/main/img/result2.png) 
 ___
 
-### Команда:
+### Добавляємо контакт:
+Команда:
 ```
 node index.js --action="add" --name="Mango" --email="mango@gmail.com" --phone="322-22-22"
 ```
-### Результак виконання:
+Результат виконання:
 
-![result1](https://raw.githubusercontent.com/mrkuzyk/goit-node-hw-01/main/img/result2.png) 
+![result1](https://raw.githubusercontent.com/mrkuzyk/goit-node-hw-01/main/img/results3.png) 
+
+Список всіх контактів після додавання:
+![result1](https://raw.githubusercontent.com/mrkuzyk/goit-node-hw-01/main/img/result3-list.png) 
 ___
 
-Результат виконання команди `node index.js --action="remove" --id=3` 
-___
+### Видаляємо контакт:
+Команда:
+```
+node index.js --action="remove" --id="Xjw8I"
+```
+Результат виконання:
+
+![result1](https://raw.githubusercontent.com/mrkuzyk/goit-node-hw-01/main/img/result4.png) 
+
+Список всіх контактів після видалення:
+![result1](https://raw.githubusercontent.com/mrkuzyk/goit-node-hw-01/main/img/result4-list.png)

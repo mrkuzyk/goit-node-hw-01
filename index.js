@@ -1,12 +1,6 @@
 const contactsMethods = require('./contacts.js');
 const { program } = require('commander');
 
-
-
-
-
-const argv = program.opts();
-
 const invokeActions = async ({ action, id, name, email, phone }) => {
     switch (action) {
         case 'list':

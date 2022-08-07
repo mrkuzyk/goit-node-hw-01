@@ -1,31 +1,44 @@
 const contactsMethods = require('./contacts.js');
+const { program } = require('commander');
+
+
+
+
+
+const argv = program.opts();
 
 const invokeActions = async ({ action, id, name, email, phone }) => {
     switch (action) {
-        case 'all':
+        case 'list':
             const allContacts = await contactsMethods.listContacts();
             console.table(allContacts);
             break;
-        case 'getById':
+        case 'get':
             const oneContact = await contactsMethods.getContactById(id);
             console.table(oneContact);
             break;
-        case 'removeById':
+        case 'remove':
             const removedContact = await contactsMethods.removeContact(id);
             console.table(removedContact);
             break;
-        case 'addContact':
+        case 'add':
             const newContact = await contactsMethods.addContact(name, email, phone);
             console.table(newContact);
             break;
     
         default:
-            console.log('unknown action');
+            console.warn("\x1B[31m Unknown action type!");
     }
 }
 
+program
+    .option("-a, --action <type>", "choose action")
+    .option("-i, --id <type>", "user id")
+    .option("-n, --name <type>", "user name")
+    .option("-e, --email <type>", "user email")
+    .option("-p, --phone <type>", "user phone")
 
-// invokeActions({ action: 'all' });
-// invokeActions({action: 'getById', id: '3'});
-// invokeActions({action: 'removeById', id: '2'});
-invokeActions({action: 'addContact', name: 'Petro', email: 'petro@semsempererat.com', phone: '(501) 472-5218'});
+program.parse();
+
+const options = program.opts();
+invokeActions(options);

@@ -12,15 +12,15 @@ const listContacts = async() => {
   return JSON.parse(data);
 }
 
-const getContactById = async (id) => {
+const getContactById = async (contactId) => {
   const contacts = await listContacts();
-  const result = contacts.find(contact => contact.id === id);
+  const result = contacts.find(contact => contact.id === contactId);
   return result || null;
 }
 
-const removeContact = async (id) => {
+const removeContact = async (contactId) => {
   const contacts = await listContacts();
-  const removeContactIndex = contacts.findIndex(contact => contact.id === id);
+  const removeContactIndex = contacts.findIndex(contact => contact.id === contactId);
 
   if (!removeContactIndex) {
     return null;
